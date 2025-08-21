@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reduru</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: antiquewhite;
+        }
+
+        #winner-section {
+            background-color: #F2C1D1;
+            width: 35em;
+            height: 5em;
+            border-radius: 1em;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        #who-is-winner {
+            font-size: 1.3em;
+            background-color: #A5D6D9;
+            padding: 10px 20px;
+            border-radius: 0.6em;
+        }
+
+        .window {
+            background-color: #F2C1D1;
+            width: 35em;
+            height: 23em;
+            border-radius: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            z-index: 2;
+        }
+
+        button {
+            font-size: 3rem;
+            border-radius: 15px;
+            padding: 10px 20px;
+            background-color: #A5D6D9;
+            border: none;
+        }
+
+        a {
+            margin: 0 30px;
+        }
+
+        button:hover {
+            background-color: #7FFFD4;
+        }
+
+        .full-screen-gif {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            z-index: 1;
+            display: none;
+        }
+
+    </style>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            let url = new URL(window.location.href);
+            let params = new URLSearchParams(url.search);
+
+
+            let winner = params.get("winner");
+            console.log(winner);
+
+            const winGif = document.querySelector(".full-screen-gif")
+            const loseGif = document.querySelectorAll(".full-screen-gif")[1]
+
+
+            const winnerSection = document.getElementById("winner-section")
+            if (winner) {
+                winnerSection.style.display = "flex";
+            }
+            const whoIsWinner = document.getElementById("who-is-winner")
+            if (winner) {
+                if (winner === "gamer") {
+                    whoIsWinner.innerText = "Ви перемогли цей ШІ!!!";
+                    winGif.style.display = "block"
+                    setTimeout(() => {
+                            winGif.style.display = "none";
+                        }, 2500);
+                } else {
+                    whoIsWinner.innerText = `Перемогла/іг ${winner}(`;
+                    loseGif.style.display = "block"
+                }
+            }
+        });
+
+
+    </script>
+</head>
+<body>
+<main>
+    <img src="{{ url_for('static', filename='img/congratulations.gif') }}"
+         alt="Victory GIF" class="full-screen-gif">
+    <img src="{{ url_for('static', filename='img/drops.gif') }}"
+         alt="Defeat GIF" class="full-screen-gif">
+    <div id="winner-section">
+        <p id="who-is-winner"></p>
+    </div>
+    <div class="window">
+        <a href="{{ url_for('game') }}">
+            <button>Грати знову!</button>
+        </a>
+        <a href="{{ url_for('index') }}">
+            <button>Домашня сторінка</button>
+        </a>
+    </div>
+</main>
+</body>
+</html>
+

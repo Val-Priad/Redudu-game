@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (width < 1024px) or (height < 730px) {
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+
+    .warning {
+        width: 200px;
+        height: 100px;
+        background-color: brown;
+        color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .player-field, .one-row,
+    .game-data, .loading-screen {
+        display: none;
+    }
+
+    .loading-screen.visible {
+        display: none;
+    }
+}
+
+@media (width >= 1024px) and (height >= 730px) {
+    html, body {
+        height: 100%;
+    }
+
+    .warning {
+        display: none;
+    }
+
+    .one-row {
+        display: flex;
+    }
+
+    .enemy-1-field, .enemy-2-field {
+        width: 20vw;
+        background: green;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .enemy-windows {
+        background: #7BA05B;
+        height: 60vh;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 10px;
+    }
+
+    .enemy-1-cards {
+        display: none;
+    }
+
+    .see-cards-1:hover + .enemy-1-cards {
+        background: turquoise;
+        width: 69vw;
+        height: 25vh;
+        display: flex;
+        padding: 15px;
+        gap: 5px;
+        z-index: 1;
+        align-self: start;
+    }
+
+    .enemy-2-cards {
+        display: none;
+    }
+
+    .see-cards-2:hover + .enemy-2-cards {
+        background: turquoise;
+        width: 69vw;
+        height: 25vh;
+        display: flex;
+        padding: 15px;
+        gap: 5px;
+        z-index: 1;
+        align-self: end;
+    }
+
+    .enemy-windows img {
+        max-width: 100%;
+    }
+
+    .game-field {
+        width: 60vw;
+        background: #537A5A;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .deck img {
+        width: 150px;
+    }
+
+    .deck {
+        text-align: center;
+    }
+
+    .player-field {
+        width: 100%;
+        height: 30vh;
+        background: olivedrab;
+        padding: 15px 10px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .player-cards {
+        background: turquoise;
+        width: 69vw;
+        height: 25vh;
+        display: flex;
+        padding: 15px;
+        gap: 5px;
+    }
+
+    .player-cards .card img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .player-opportunities {
+        height: 25vh;
+        width: 15vw;
+        background: #8A3324;
+        padding: 10px;
+    }
+
+    .player-opportunities button {
+    }
+
+    .player-turn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .player-stats {
+        height: 25vh;
+        width: 15vw;
+        background: #CD7F32;
+        padding: 15px;
+    }
+
+    .quit-game {
+        background: brown;
+        color: orange;
+    }
+
+    .play-button {
+        background: rosybrown;
+    }
+
+    .play-button:hover {
+        background: cadetblue;
+    }
+
+    .quit-game:hover {
+        background: crimson;
+    }
+
+    .loading-screen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #537A5A;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #deck-shuffling {
+        position: relative;
+        width: 10.6em;
+        height: 14.7em;
+        margin-bottom: 20px;
+    }
+
+    .card-shuffling {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        background-size: contain;
+        border: 2px solid black;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+        transform-origin: center;
+        transition: transform 0.5s ease-in-out, top 0.5s, left 0.5s;
+    }
+
+
+    .game-data {
+        position: absolute;
+        width: 100%;
+        padding-top: 50px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards-in-game {
+        background: turquoise;
+        width: 40vw;
+        height: 20vh;
+        display: flex;
+        padding: 15px;
+        gap: 5px;
+    }
+
+    .cards-in-game .card img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .play-button {
+        display: none;
+    }
+
+    .card.active {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .card.selected {
+        border: 2px solid #007bff;
+        transform: scale(1.1);
+    }
+
+}

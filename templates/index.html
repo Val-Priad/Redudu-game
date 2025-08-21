@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reduru</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+.window {
+    background-color: #F2C1D1;
+    width: 400px;
+    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+button {
+    font-size: 3rem;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: #A5D6D9;
+    border: none;
+}
+
+button:hover {
+    background-color: #7FFFD4;
+}
+    </style>
+</head>
+<body>
+<main>
+    <div class="window">
+        <a href="{{ url_for('game') }}"><button>Грати!</button></a>
+        <a href="{{ url_for('rules') }}"><button>Правила</button></a>
+    </div>
+</main>
+</body>
+</html>
+

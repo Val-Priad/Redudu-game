@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduru</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/game.css') }}">
+    <script src="{{ url_for('static', filename='js/game.js') }}" defer></script>
+</head>
+<body>
+<main>
+    <div class="warning">
+        <p>You can't play this game on device with
+            width less than 1024px</p>
+    </div>
+
+    <div id="loading-screen" class="loading-screen">
+        <p id="loading-croupier">Обираємо, хто буде сдавати карти.</p>
+        <br>
+        <div id="deck-shuffling">
+
+        </div>
+        <p id="loading-shuffling">Тасуємо карти...</p>
+    </div>
+
+
+    <div class="game-data">
+        <p id="whose-turn"></p>
+        <br>
+        <p id="previous-turn-1"></p>
+        <p id="previous-turn-2"></p>
+        <p id="previous-turn-3"></p>
+        <p id="previous-turn-4"></p>
+
+    </div>
+
+    <div class="one-row">
+
+        <div class="enemy-1-field">
+            <div class="enemy-windows">
+                <p id="enemy-1-name">Пані Боярка</p>
+                <img src="" alt="angry opponent">
+                <p id="qty-cards-enemy-1">У стосі ще Х карт</p>
+                <p id="enemy-1-hand">У руці X карт</p>
+                <br>
+                <p>Козир</p>
+                <p id="trump-enemy-1"></p>
+                <button class="see-cards-1">Підглянути в карти суперника
+                </button>
+                <div class="enemy-1-cards">
+                </div>
+            </div>
+        </div>
+
+        <div class="game-field">
+            <div class="cards-in-game">
+            </div>
+            <div class="deck">
+                <img src="../static/img/cards/back.png" alt="back of card">
+                <p>Залишилось карт X</p>
+                <p>Козир Х</p>
+            </div>
+        </div>
+
+        <div class="enemy-2-field">
+            <div class="enemy-windows">
+                <p id="enemy-2-name">Пані Сивашка</p>
+                <img src="" alt="angry opponent">
+                <p id="qty-cards-enemy-2">У стосі ще Х карт</p>
+                <p id="enemy-2-hand">У руці X карт</p>
+                <br>
+                <p>Козир</p>
+                <p id="trump-enemy-2"></p>
+                <button class="see-cards-2">Підглянути в карти суперника
+                </button>
+                <div class="enemy-2-cards">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="player-field">
+
+        <div class="player-cards">
+
+        </div>
+
+        <div class="player-opportunities">
+
+            <div class="player-turn">
+                <button lang="uk" class="play-button" id="make-a-move"
+                        onclick="makeAmove()">
+                    Ходити
+                </button>
+                <button lang="uk" class="play-button" id="use-cards">
+                    Задіяти обрані карти
+                </button>
+                <button lang="uk" class="play-button" id="beat-cards"
+                        onclick="beatTheCards()">
+                    Покрити
+                </button>
+                <button lang="uk" class="play-button" id="move-cards"
+                        onclick="moveCards()">
+                    Перевести
+                </button>
+                <button lang="uk" class="play-button" id="take-cards"
+                        onclick="takeCards()">
+                    Взяти
+                </button>
+                <button lang="uk" class="play-button" id="deactivate-cards"
+                        onclick="deactivateCards()">
+                    Деактивувати виділення
+                </button>
+                <button lang="uk" class="quit-game" onclick="goBack()">
+                    Закінчити цю гру
+                </button>
+            </div>
+
+        </div>
+
+        <div class="player-stats">
+            <p id="qty-cards-player">У стосі ще Х карт</p>
+            <br>
+            <p id="trump-player"></p>
+            <p id="common-trump-player"></p>
+        </div>
+
+    </div>
+</main>
+
+</body>
+
+</html>

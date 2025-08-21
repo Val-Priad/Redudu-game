@@ -2,7 +2,7 @@
 
 ## Demo ✨
 
-- [Redudu Game]()
+- [Redudu Game](https://redudu-game.onrender.com/)
 
 ## Game Rules 🎲
 

@@ -12,7 +12,7 @@ You can also check them out in the demo
 
 ## History 📜
 
-Hello traveler 🧙, I created this project as my final assignment for a course that was supposed to ~~destroy us~~ teach us the basics of algorithms. At that time, I was still naïve and believed the university could actually teach me something, so I didn’t try to study extra on my own. 📚
+Hello traveler 🧙, I created this project as my final assignment for a course that was supposed to ~~destroy us~~ teach us the basics of algorithms. At that time, I was still naive and believed the university could actually teach me something, so I didn’t try to study extra on my own. 📚
 
 As far as I remember, I had to submit this project with the highest possible grade no matter what, otherwise I was in big trouble 😅. In the end, this work was born out of fear 😨. I needed to impress the professor so that, despite all its flaws, he would give me a good grade. ✅
 
